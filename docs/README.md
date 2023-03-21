@@ -1,3 +1,7 @@
+## Task 2 - Many Senders; Many Receivers
+
+The program many2many.go contains four producers that together send 32 strings over a channel. At the other end there are two consumers that receive the strings. Describe what happens, and explain why it happens, if you make the following changes in the program. Try first to reason your way through, and then test your hypothesis by changing and running the program.
+
 * What happens if you switch the order of the statements `wgp.Wait()` and `close(ch)` in the end of the `main` function?
     * The channel will close before the producers have sent their information. The program will then panic as producers try to send on the closed channel.
 
